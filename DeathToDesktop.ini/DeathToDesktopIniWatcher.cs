@@ -1,9 +1,6 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -88,7 +85,7 @@ namespace DeathToDesktop.ini
                     // Sleep for a little bit to help prevent access issues with the writer.
                     Thread.Sleep(10);
 
-                    File.Delete(in_args.FullPath);
+                    DeleteFile(in_args.FullPath);
                 }
                 catch (Exception exp)
                 {
@@ -103,7 +100,7 @@ namespace DeathToDesktop.ini
                             Thread.Sleep(DeleteRetryDelayMs);
                             try
                             {
-                                File.Delete(in_args.FullPath);
+                                DeleteFile(in_args.FullPath);
 
                                 // If there wasn't an exception then the file was deleted.
                                 return;
@@ -121,6 +118,15 @@ namespace DeathToDesktop.ini
             {
                 Console.WriteLine("Unexpected exception: {0}", exp.Message);
             }
+        }
+
+        /// <summary>
+        /// Deletes the named file.
+        /// </summary>
+        /// <param name="in_filename">The file to be deleted.</param>
+        private void DeleteFile(string in_filename)
+        {
+            File.Delete(in_filename);
         }
 
         /// <summary>
