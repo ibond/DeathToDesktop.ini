@@ -1,9 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibDeathToDesktop.ini", "LibDeathToDesktop.ini\LibDeathToDesktop.ini.csproj", "{34AE7C36-D696-44AA-AC9E-A43FEDF6365A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeathToDesktop.ini.console", "DeathToDesktop.ini.console\DeathToDesktop.ini.console.csproj", "{D7EBE63B-7FAB-4A5B-9E29-D05CA850FF50}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeathToDesktop.ini", "DeathToDesktop.ini\DeathToDesktop.ini.csproj", "{D7EBE63B-7FAB-4A5B-9E29-D05CA850FF50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +9,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{34AE7C36-D696-44AA-AC9E-A43FEDF6365A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{34AE7C36-D696-44AA-AC9E-A43FEDF6365A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{34AE7C36-D696-44AA-AC9E-A43FEDF6365A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{34AE7C36-D696-44AA-AC9E-A43FEDF6365A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D7EBE63B-7FAB-4A5B-9E29-D05CA850FF50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D7EBE63B-7FAB-4A5B-9E29-D05CA850FF50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7EBE63B-7FAB-4A5B-9E29-D05CA850FF50}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DeathToDesktop.ini.console
+namespace DeathToDesktop.ini
 {
     class Program
     {
@@ -13,7 +13,7 @@ namespace DeathToDesktop.ini.console
         {
             try
             {
-                var watcher = new LibDeathToDesktop.ini.DeathToDesktopIniWatcher();
+                var watcher = new DeathToDesktopIniWatcher();
                 Thread.Sleep(Timeout.Infinite);
 
                 return 0;
