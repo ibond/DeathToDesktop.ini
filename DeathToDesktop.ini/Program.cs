@@ -21,6 +21,14 @@ namespace DeathToDesktop.ini
                 {
                     return Install(args);
                 }
+                else if (args[0] == "--uninstall")
+                {
+                    return Uninstall(args);
+                }
+
+                // Unknown options.
+                Console.WriteLine("Unknown options.");
+                return 1;
             }
 
             try
@@ -61,6 +69,32 @@ namespace DeathToDesktop.ini
             catch (Exception exp)
             {
                 MessageBox.Show(string.Format("Failed to install: {0}", exp.Message), "Install Failed", MessageBoxButtons.OK);
+                return 1;
+            }
+        }
+
+
+        /// <summary>
+        /// This will remove the program from startup.
+        /// </summary>
+        static int Uninstall(string[] args)
+        {
+            try
+            {
+                // Get the full path to this executable.
+                string executablePath = Assembly.GetEntryAssembly().Location;
+
+                // Remove the registry key.
+                RegistryKey startupKey = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true);
+                startupKey.DeleteValue("DeathToDesktop.ini", false);
+
+                MessageBox.Show(string.Format("'{0}' uninstalled successfully.", executablePath), "Success", MessageBoxButtons.OK);
+
+                return 0;
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(string.Format("Failed to uninstall: {0}", exp.Message), "Uninstall Failed", MessageBoxButtons.OK);
                 return 1;
             }
         }
