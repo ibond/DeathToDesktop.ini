@@ -37,7 +37,18 @@ namespace DeathToDesktop.ini
             m_watchers = m_desktopDirectories
                 .Select(directory =>
                 {
-                    Console.WriteLine("Watching for creation of '{0}'.", Path.Combine(directory, "desktop.ini"));
+                    var filename = Path.Combine(directory, "desktop.ini");
+                    Console.WriteLine("Watching for creation of '{0}'.", filename);
+
+                    // Attempt to delete the existing file.
+                    try
+                    {
+                        DeleteFile(filename);
+                    }
+                    catch (Exception exp)
+                    {
+                        Console.WriteLine("Failed to delete already existing file '{0}': {1}", filename, exp);
+                    }
 
                     var watcher = new FileSystemWatcher(directory, "desktop.ini");
                     watcher.Created += new FileSystemEventHandler(OnCreated);
